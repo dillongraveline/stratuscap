@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratus Capital</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+        
+        :root {
+            --primary: #0f1218;
+            --secondary: #1c2635;
+            --accent: #7e95b3;
+            --accent2: #d0b375;
+            --text: #f2f2f4;
+            --subtle: rgba(242, 242, 244, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-image: 
+                linear-gradient(135deg, rgba(28, 38, 53, 0.3) 0%, transparent 100%),
+                radial-gradient(circle at 70% 30%, rgba(126, 149, 179, 0.05) 0%, transparent 50%);
+            position: relative;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 3rem;
+            position: relative;
+            z-index: 1;
+            background: rgba(15, 18, 24, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 2px;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: 6px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            color: var(--text);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            width: 30%;
+            height: 1px;
+            background: var(--accent2);
+            bottom: -10px;
+            left: 35%;
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+            color: var(--subtle);
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            letter-spacing: 0.5px;
+            font-weight: 300;
+        }
+        
+        .divider {
+            width: 50px;
+            height: 1px;
+            background-color: var(--accent);
+            margin: 3rem auto;
+        }
+        
+        .date {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: var(--accent);
+            margin-top: 3rem;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        
+        .symbol {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            opacity: 0.5;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+        
+        /* Geometric elements */
+        .geometric-element {
+            position: absolute;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .circle {
+            width: 600px;
+            height: 600px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .line-h {
+            width: 80vw;
+            height: 1px;
+            background-color: var(--accent);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .line-v {
+            width: 1px;
+            height: 80vh;
+            background-color: var(--accent);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container > * {
+            animation: fadeIn 1s forwards;
+            opacity: 0;
+        }
+        
+        .logo { animation-delay: 0.2s; }
+        .tagline { animation-delay: 0.4s; }
+        .divider { animation-delay: 0.6s; }
+        .message { animation-delay: 0.8s; }
+        .date { animation-delay: 1s; }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+            
+            .tagline {
+                font-size: 0.8rem;
+            }
+            
+            .message {
+                font-size: 1rem;
+            }
+            
+            .container {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="geometric-element circle"></div>
+    <div class="geometric-element line-h"></div>
+    <div class="geometric-element line-v"></div>
+    
+    <div class="container">
+        <h1 class="logo">Stratus Capital</h1>
+        <p class="tagline">Precision • Insight • Vision</p>
+        
+        <div class="divider"></div>
+        
+        <p class="message">
+            Some create value. Others perceive it.
+            <br><br>
+            We architect the structures that define excellence.
+        </p>
+        
+        <p class="date">Est. MMXXV</p>
+    </div>
+    
+    <div class="symbol">S·C</div>
+</body>
+</html>
